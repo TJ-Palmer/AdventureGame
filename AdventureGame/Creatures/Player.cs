@@ -19,6 +19,10 @@ namespace AdventureGame.Creatures {
             this.equippedWeapon.MenuOptions.Remove(Enums.MenuActionType.Drop);
             this.inventory.AddItem(this.equippedWeapon);
             this.inventory.AddItem(new Apple());
+            // hack fixed. Horrible idea
+            Meat placeholderMeat = new Meat();
+            placeholderMeat.Quantity = 0;
+            this.inventory.AddItem(placeholderMeat);
         }
 
         public IItem SelectedItem {

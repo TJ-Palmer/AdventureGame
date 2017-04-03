@@ -79,6 +79,7 @@ namespace AdventureGame {
 
             return type;
         }
+        // This method does way to much... Clean up later.
         private void RunAttackTurn() {
             if (this.player.Health <= 0) {
                 EndingDied();
@@ -103,6 +104,7 @@ namespace AdventureGame {
                     this.currentlyAttacking.TakeDamage(this.player.DealDamage());
                     if (this.currentlyAttacking.Health <= 0) {
                         foreach (IItem item in this.currentlyAttacking.Inventory.GetItems()) {
+                            // Only working for apples.... FUCALS:JDLKSJDF
                             if (this.player.Inventory.Has(item) && item is Food) {
                                 ((Food)this.player.Inventory.GetItem(item)).Quantity++;
                             } else {
